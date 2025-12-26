@@ -20,12 +20,11 @@ class Solution {
                       ans[i]=0;
                         s.push(i);
                      }
-                    //  else{
-                    //     ans[i]=s.peek()-i;
-                    //     s.push(i);
-                    //  }
-            }
-            if(temp[i]<temp[s.peek()]){
+                     else{
+                        ans[i]=s.peek()-i;
+                        s.push(i);
+                     }
+            }else{
                  ans[i]=s.peek()-i;
                         s.push(i);
             }
