@@ -19,11 +19,13 @@ class Solution {
                      if(s.isEmpty()){
                       ans[i]=0;
                         s.push(i);
-                     }else{
-                        ans[i]=s.peek()-i;
-                        s.push(i);
                      }
-            }else{
+                    //  else{
+                    //     ans[i]=s.peek()-i;
+                    //     s.push(i);
+                    //  }
+            }
+            if(temp[i]<temp[s.peek()]){
                  ans[i]=s.peek()-i;
                         s.push(i);
             }
