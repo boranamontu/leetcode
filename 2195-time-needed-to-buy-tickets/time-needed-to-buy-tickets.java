@@ -2,8 +2,10 @@ import java.util.*;
 class Solution {
     public int timeRequiredToBuy(int[] tickets, int k) {
         Queue<Integer> q=new LinkedList<>();
-        for(int i=0;i<tickets.length;i++){
+        int i=0;
+        while(i!=tickets.length){
             q.add(i);
+            i++;
         }int stepcount=0;
         while(tickets[k]!=0){
             tickets[q.peek()]--;
