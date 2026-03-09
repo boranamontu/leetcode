@@ -22,13 +22,10 @@ class Solution {
     }
     public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
         List<Integer> ll1=new ArrayList<>();
-        List<Integer> ll2=new ArrayList<>();
 
         inorder(root1,ll1);
-        inorder(root2,ll2);
-        for(int i=0;i<ll2.size();i++){
-            ll1.add(ll2.get(i));
-        }
+        inorder(root2,ll1);
+    
         Collections.sort(ll1);
         return ll1;
 
