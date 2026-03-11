@@ -14,41 +14,33 @@
  * }
  */
 class Solution {
-    public static int helper(List<Integer> ll,TreeNode root, int low, int high,int sum){
+    public static int helper(Stack<Integer> s,TreeNode root, int low, int high){
            if(root==null)return 0;
 
            if(low<root.val && high<root.val){
-             helper(ll,root.left,low,high,sum);
+             helper(s,root.left,low,high);
            }else if(low>root.val && high>root.val){
-             helper(ll,root.right,low,high,sum);
+             helper(s,root.right,low,high);
            }else{
-            
-        //          helper(sum,root.left,low,high);
-      
-        //          helper(sum,root.right,low,high);
-      
-        //    }
 
          if(root.val>=low && root.val<=high){
-                 ll.add(root.val);
+                s.push(s.pop()+root.val);
                 
             }
-                        helper(ll,root.left,low,high,sum);
+                 helper(s,root.left,low,high);
       
-                 helper(ll,root.right,low,high,sum);
+                 helper(s,root.right,low,high);
                      
                 
-           } for(int i=0;i<ll.size();i++){
-                    sum=sum+ll.get(i);
-                 }
-                 return sum;
+           } 
+                 return s.peek();
        
 
     }
     public int rangeSumBST(TreeNode root, int low, int high) {
-      List<Integer> ll=new ArrayList<>();
-      int sum=0;
-     return  helper(ll,root,low,high,sum);
+     Stack<Integer> s=new Stack<>();
+      s.push(0);
+     return  helper(s,root,low,high);
       
     }
 }
