@@ -30,16 +30,29 @@ class Solution {
         helper( root, k,ll);
         int ans=0;
         if(ll.size()<=1) return false;
-        for(int i=0;i<ll.size();i++){
-            int curr=ll.get(i);
-            for(int j=0;j<ll.size();j++){
-                  if(curr+ll.get(j)==k && i!=j){
-                    ans=curr+ll.get(j);
-                    break;
-                  }
-            }
+        int i=0;
+        int j=ll.size()-1;
+        // for(int i=0;i<ll.size();i++){
+        //     int curr=ll.get(i);
+        //     for(int j=0;j<ll.size();j++){
+        //           if(curr+ll.get(j)==k && i!=j){
+        //             ans=curr+ll.get(j);
+        //             break;
+        //           }
+        //     }
+        // }
+        while(i<j){
+           if(ll.get(i)+ll.get(j)==k){
+            ans=ll.get(i)+ll.get(j);
+            break;
+           }
+           if(ll.get(i)+ll.get(j)<k){
+            i++;
+           }else if(ll.get(i)+ll.get(j)>k){
+            j--;
+           }
+          
         }
-        
         return ans!=0;
         
     }
