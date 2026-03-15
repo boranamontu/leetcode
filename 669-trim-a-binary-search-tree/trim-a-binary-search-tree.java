@@ -20,9 +20,7 @@ class Solution {
         if(root.val < low){
 
             if( root.right != null && root.right.val < low ){
-                  while(root.right != null && root.right.val < low ){
-                    root = root.right;
-                  }
+                  helper(root.right, low, high);
             }
             return   helper(root.right, low, high);
             
@@ -30,9 +28,7 @@ class Solution {
 
         if(root.val > high){
             if( root.left != null && root.left.val > high ){
-                  while(root.left != null && root.left.val > high  ){
-                    root = root.left;
-                  }
+                 helper(root.left, low, high);
             }
                return helper(root.left, low, high);
         }
