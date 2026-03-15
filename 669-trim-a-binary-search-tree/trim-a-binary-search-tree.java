@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    public static TreeNode helper(TreeNode root, int low, int high,Stack<TreeNode> s){
+    public static TreeNode helper(TreeNode root, int low, int high){
          if(root == null) return null;
 
         if(root.val < low){
@@ -24,7 +24,7 @@ class Solution {
                     root = root.right;
                   }
             }
-            return   helper(root.right, low, high,s);
+            return   helper(root.right, low, high);
             
         }
 
@@ -34,20 +34,19 @@ class Solution {
                     root = root.left;
                   }
             }
-               return helper(root.left, low, high,s);
+               return helper(root.left, low, high);
         }
         
-         root.left = helper(root.left, low, high,s);
+         root.left = helper(root.left, low, high);
          
          
-         root.right = helper(root.right, low, high,s);
+         root.right = helper(root.right, low, high);
 
         return root;
     }
     public TreeNode trimBST(TreeNode root, int low, int high) {
-          Stack<TreeNode> s=new Stack<>();
-          s.push(root);
-        return helper( root,low,  high,s);
+        
+        return helper( root,low,  high);
        
     }
 }
