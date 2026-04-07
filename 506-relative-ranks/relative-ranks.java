@@ -20,7 +20,7 @@ class Solution {
       }
       while(!pq.isEmpty()){
         if(pq.size() > 3){
-            str[pq.remove().idx] = String.valueOf(pq.size() + 1);
+            str[pq.remove().idx] = Integer.toString(pq.size() + 1); 
         }else if(pq.size() == 3 ){
             str[pq.remove().idx] = "Bronze Medal";
         }else if(pq.size() == 2 ){
