@@ -15,12 +15,12 @@ class Solution {
     public String[] findRelativeRanks(int[] score) {
       PriorityQueue<sort> pq = new PriorityQueue<>();
       String str[] = new String[score.length];
-      for(int i=0;i<score.length;i++){
+      for(int i = 0 ; i < score.length ; i++){
         pq.add(new sort(i,score[i]));
       }
       while(!pq.isEmpty()){
-        if(pq.size()>3){
-            str[pq.remove().idx] = String.valueOf(pq.size()+1);
+        if(pq.size() > 3){
+            str[pq.remove().idx] = String.valueOf(pq.size() + 1);
         }else if(pq.size() == 3 ){
             str[pq.remove().idx] = "Bronze Medal";
         }else if(pq.size() == 2 ){
