@@ -27,25 +27,25 @@ class Solution {
             }
         }
     public int[] maxSubsequence(int[] arr, int k) {
-       PriorityQueue<sort> pq = new PriorityQueue<>();//Comparator.reverseOrder()
-        for(int i=0;i<arr.length;i++){
+       PriorityQueue<sort> pq = new PriorityQueue<>();
+        for(int i = 0 ; i < arr.length ; i++){
             pq.add(new sort(i,arr[i]));
         }
 
-        int kc = arr.length-k;
-        while(kc!=0){
+        int kc = arr.length - k;
+        while(kc != 0){
           pq.remove();
           kc--;
         }
 
         int ans[] = new int[k];
-      PriorityQueue<sort2> pq2 = new PriorityQueue<>();//Comparator.reverseOrder()
+      PriorityQueue<sort2> pq2 = new PriorityQueue<>();
      while(!pq.isEmpty()){
         pq2.add(new sort2(pq.peek().idx, pq.peek().val));
         pq.remove();
      } 
     
-         for(int i=0;i<k;i++){
+         for(int i = 0 ; i < k ; i++){
           ans[i] = pq2.remove().val;
          }
         return ans;
