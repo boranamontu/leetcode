@@ -16,8 +16,8 @@ class Solution {
         
         while(temp2 != null){
           int i = 1;
-          while(i<=Math.min(temp1.val,temp2.val)){
-            if(temp1.val % i==0 && temp2.val%i==0 ){
+          while(i <= Math.min(temp1.val,temp2.val)){
+            if(temp1.val % i == 0 && temp2.val % i == 0 ){
                 lcd = i;
             }
             i++;
@@ -25,8 +25,8 @@ class Solution {
           ListNode newnode = new ListNode(lcd);
           temp1.next = newnode;
           newnode.next = temp2;
-          temp1=temp2;
-          temp2=temp1.next;
+          temp1 = temp2;
+          temp2 = temp1.next;
         }
         return head;
     }
