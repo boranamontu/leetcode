@@ -6,13 +6,11 @@ class Solution {
             pq.add(piles[i]);
         }
         while(k != 0){
-            int top = pq.remove();
-            if(top % 2 ==0){
-                top = top / 2;
+            if(pq.peek() % 2 ==0){
+                pq.add(pq.remove() / 2);
             }else{
-                top = (top / 2) + 1;
+                pq.add((pq.remove() / 2) + 1);
             }
-            pq.add(top);
             k--;
         }
         while(!pq.isEmpty()){
