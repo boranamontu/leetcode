@@ -72,21 +72,14 @@ class Solution {
         for(int i=0;i<words.length;i++){
             for(int j=i+1;j<words.length;j++){
                boolean ans ;
-                if(words[i].length() > words[j].length()  ){
-                    System.out.println("greater");
+                if(words[i].length() > words[j].length() ||  !words[i].equals(words[j].substring(0,words[i].length())) ){
                     ans = false; 
                 }else
-                if( !words[i].equals(words[j].substring(0,words[i].length()))){
-                    
-                    ans = false; 
-                }else{
-                  
+                {
                     ans =isPrefixAndSuffix(words[i], words[j]);
                 }
-               
                if(ans == true){
                 count++;
-                
                }
             }
         }
