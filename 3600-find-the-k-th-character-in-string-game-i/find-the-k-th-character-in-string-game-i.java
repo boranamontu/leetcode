@@ -6,9 +6,7 @@ class Solution {
             if(idx == 25){
                 sb.append("a");
             }else{
-                char letter = (char) ((idx + 1) + 'a');
-                
-                sb.append(letter);
+                sb.append((char) ((idx + 1) + 'a'));
                 
             }
 
