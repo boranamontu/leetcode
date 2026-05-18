@@ -16,9 +16,8 @@ class Solution {
         return sb;
     }
     public char kthCharacter(int k) {
-        String word = "a";
        StringBuilder sb = new StringBuilder();
-        sb.append(word);
+       sb.append("a");
         while(sb.length() < k){
             System.out.println(operation(sb));
         }
