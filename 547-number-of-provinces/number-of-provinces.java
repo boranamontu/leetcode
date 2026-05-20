@@ -36,8 +36,9 @@ class Solution {
                 for(int i = 0 ; i < graph[curr].size();i++){
                     edge e = graph[curr].get(i);
                     
-                    q.add(e.dest);
-                    
+                    if(visit[e.dest] == false){
+                        q.add(e.dest);
+                    }
                 }
             }
         }
