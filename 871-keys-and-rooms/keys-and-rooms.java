@@ -39,12 +39,7 @@ class Solution {
     }
 
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-         int v = rooms.size();
-        
-       
-
-        int count = NoOfProvinces(rooms);
-        return count == 1;
+        return NoOfProvinces(rooms) == 1;
 
     }
 }
