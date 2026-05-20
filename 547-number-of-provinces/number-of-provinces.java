@@ -27,17 +27,13 @@ class Solution {
 
     }
     public static void bfs(ArrayList<edge>[] graph,boolean visit[],Queue<Integer> q){
-        
         while(!q.isEmpty()){
             int curr = q.remove();
             if(visit[curr] == false){
-                System.out.print(curr+" ");
                 visit[curr]= true;
                 for(int i = 0 ; i < graph[curr].size();i++){
-                    edge e = graph[curr].get(i);
-                    
-                    if(visit[e.dest] == false){
-                        q.add(e.dest);
+                    if(visit[graph[curr].get(i).dest] == false){
+                        q.add(graph[curr].get(i).dest);
                     }
                 }
             }
