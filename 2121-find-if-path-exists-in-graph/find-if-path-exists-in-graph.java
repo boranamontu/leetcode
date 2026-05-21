@@ -50,9 +50,9 @@ class Solution {
     }
 
     public boolean validPath(int n, int[][] edges, int src, int des) {
-        if(edges.length == 1 || edges.length == 0){
-            return true;
-        }
+        // if(edges.length == 1 || edges.length == 0){
+        //     return true;
+        // }
         ArrayList<edge> graph[] = new ArrayList[n];
         for(int i = 0 ; i < graph.length;i++){
             graph[i] = new ArrayList<>();
