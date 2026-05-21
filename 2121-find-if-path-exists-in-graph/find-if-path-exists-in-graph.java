@@ -38,10 +38,10 @@ class Solution {
         Queue<Integer> q = new LinkedList<>();
         q.add(src);
         bfs(graph, visit, q,dest);
-        if(q.isEmpty()){
-            return false;
-        }
-        return q.peek() == dest;
+        // if(q.isEmpty()){
+        //     return false;
+        // }
+        return !q.isEmpty();
                 
                 
             
@@ -50,14 +50,10 @@ class Solution {
     }
 
     public boolean validPath(int n, int[][] edges, int src, int des) {
-        // if(edges.length == 1 || edges.length == 0){
-        //     return true;
-        // }
         ArrayList<edge> graph[] = new ArrayList[n];
         for(int i = 0 ; i < graph.length;i++){
             graph[i] = new ArrayList<>();
         }
-       
             for(int i = 0 ; i < edges.length ; i++){
            
                 graph[edges[i][0]].add(new edge(edges[i][0], edges[i][1])); 
