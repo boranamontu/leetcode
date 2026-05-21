@@ -14,7 +14,6 @@ class Solution {
             return;
             }
             int curr = q.remove();
-            System.out.println(curr);
             if(visit[curr] == false){
                 
                 visit[curr]= true;
@@ -38,15 +37,7 @@ class Solution {
         Queue<Integer> q = new LinkedList<>();
         q.add(src);
         bfs(graph, visit, q,dest);
-        // if(q.isEmpty()){
-        //     return false;
-        // }
         return !q.isEmpty();
-                
-                
-            
-        
-
     }
 
     public boolean validPath(int n, int[][] edges, int src, int des) {
