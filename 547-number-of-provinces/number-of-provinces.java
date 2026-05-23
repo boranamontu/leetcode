@@ -87,7 +87,7 @@ class Solution {
             }
         }
 
-      return NoOfProvincesDFS(graph);
+      return NoOfProvincesBFS(graph);
 
     }   
 }
