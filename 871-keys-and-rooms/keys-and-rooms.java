@@ -1,5 +1,5 @@
 class Solution {
-     public static int NoOfProvinces(List<List<Integer>> rooms){
+     public static int NoOfProvincesBFS(List<List<Integer>> rooms){
         boolean visit[] = new boolean[rooms.size()];
         int count = 0;
         
@@ -17,7 +17,8 @@ class Solution {
         return count;
 
     }
-    public static void bfs(List<List<Integer>> rooms,boolean visit[],Queue<Integer> q){
+
+      public static void bfs(List<List<Integer>> rooms,boolean visit[],Queue<Integer> q){
         
         while(!q.isEmpty()){
             int curr = q.remove();
@@ -25,7 +26,6 @@ class Solution {
                 
                 visit[curr]= true;
                 for(int i = 0 ; i < rooms.get(curr).size();i++){
-                    
                     if(visit[rooms.get(curr).get(i)] == false){
                         q.add(rooms.get(curr).get(i));
                     }
@@ -39,7 +39,7 @@ class Solution {
     }
 
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-        return NoOfProvinces(rooms) == 1;
+        return NoOfProvincesBFS(rooms) == 1;
 
     }
 }
