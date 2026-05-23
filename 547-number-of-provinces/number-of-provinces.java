@@ -8,7 +8,25 @@ class Solution {
         }
     }
    
-   public static int NoOfProvinces(ArrayList<edge> graph[]){
+   public static int NoOfProvincesDFS(ArrayList<edge> graph[]){
+        boolean visit[] = new boolean[graph.length];
+        int count = 0;
+        
+        
+        
+        for (int i = 0; i < visit.length; i++) {
+              if(!visit[i]){
+                
+                dfs(graph, i,visit);
+                count++;
+              }
+                
+            }
+        
+        return count;
+
+    }
+    public static int NoOfProvincesBFS(ArrayList<edge> graph[]){
         boolean visit[] = new boolean[graph.length];
         int count = 0;
         
@@ -41,6 +59,19 @@ class Solution {
 
 
     }
+     private static void dfs(ArrayList<edge>[] graph, int i, boolean[] visit) {
+        if(visit[i] == false){
+            visit[i] = true;
+        for (int j = 0; j < graph[i].size(); j++) {
+              if(!visit[graph[i].get(j).dest]){
+                
+                dfs(graph, graph[i].get(j).dest,visit);
+                
+              }
+                
+            }
+        }
+    }
     public int findCircleNum(int[][] isConnected) {
         int v = isConnected.length;
         ArrayList<edge> graph[] = new ArrayList[v];
@@ -56,7 +87,7 @@ class Solution {
             }
         }
 
-      return NoOfProvinces(graph);
+      return NoOfProvincesDFS(graph);
 
     }   
 }
