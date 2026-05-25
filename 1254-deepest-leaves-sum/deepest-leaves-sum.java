@@ -39,15 +39,14 @@ class Solution {
         return ;
         
       }
-      System.out.println(count+"c"+root.val);
        deepest(root.left, s, height, count+1);
        deepest(root.right, s, height, count+1);
       
       
     }
     public int deepestLeavesSum(TreeNode root) {
-         Stack<Integer> s = new Stack<>();
-          deepest(root, s, height(root),1 );
+        Stack<Integer> s = new Stack<>();
+        deepest(root, s, height(root),1 );
         return s.peek();
     }
 }
