@@ -23,16 +23,12 @@ class Solution {
 
         int copy = root.val;
         root.val = Math.abs(lef - rig);
-        // if(!s.isEmpty()){
-        //     s.push(s.pop() + root.val);
-        // }else{
-        //     s.push(Math.abs(lef - rig));
-        // }
-          // Push "Success" if count is positive, otherwise "Failure"
-s.push(!s.isEmpty() ? s.push(s.pop() + root.val) :  s.push(Math.abs(lef - rig)));
-
-        // (!s.isEmpty()) ? s.push(s.pop() + root.val) :  s.push(Math.abs(lef - rig));
-// int res = (a > b) ? a : b;
+        if(!s.isEmpty()){
+            s.push(s.pop() + root.val);
+        }else{
+            s.push(Math.abs(lef - rig));
+        }
+          
         return lef + rig + copy;
     }
     public int findTilt(TreeNode root) {
