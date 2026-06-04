@@ -21,16 +21,12 @@ class Solution {
              visit[i] = 1;
              boolean notify = bfs(graph,q,visit);
              if(notify == false){
-                for(int j = 0 ; j < graph.length ; j++){
-                      System.out.print( visit[j]+" " );
-                }
+                
                 return false;
              }
            }
         }
-        for(int i = 0 ; i < graph.length ; i++){
-           System.out.print( visit[i]+" " );
-        }
+        
         return true;
     }
     public static boolean bfs(ArrayList<edge> graph[],Queue<Integer> q,int visit[]){
@@ -40,12 +36,11 @@ class Solution {
             
                 for(int i = 0 ; i < graph[curr].size();i++){
                     if(visit[graph[curr].get(i).dest] == visit[curr]){
-                        System.out.println(graph[curr].get(i).dest+ "=="+ curr);
-                        System.out.println(visit[graph[curr].get(i).dest]+ "=="+visit[curr]);
+                        
                         return false;
                     }
                     if(visit[graph[curr].get(i).dest] != visit[curr]  ){
-                        //-1
+                        
                         if(visit[graph[curr].get(i).dest] == -1){
                             q.add(graph[curr].get(i).dest);
                             if(visit[curr] == 0){
@@ -54,8 +49,7 @@ class Solution {
                                 visit[graph[curr].get(i).dest] = 0;
                             }
                         }
-                        //?
-                        //no action 
+                       
 
                     }
                 }
