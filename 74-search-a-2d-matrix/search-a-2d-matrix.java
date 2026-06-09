@@ -4,7 +4,7 @@ class Solution {
     int n = matrix[0].length;
     int i = 0;
     while(i < m && target > matrix[i][n-1] ){
-        System.out.println(matrix[i][0]);
+        
         i++;
     }
 
