@@ -28,10 +28,11 @@ class Solution {
                 l++;
                 sum = 0;
                 q.add(q.remove());
-            }
-            if(q.size()==1){
+                if(q.size()==1){
                 return level;
             }
+            }
+            
             sum = sum + q.peek().val;
             if(q.peek().left != null){
                 q.add(q.peek().left);
