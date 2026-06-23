@@ -42,7 +42,7 @@ class Solution {
                     }
                     q.add(q.remove());
                      ll1.add(ll2);
-                System.out.println(ll1);
+                
                 ll2 = new ArrayList<>();
                 }
                
