@@ -14,23 +14,27 @@
  * }
  */
 class Solution {
-    public static int helper(TreeNode root,List<Integer> ll){
-        if(root==null) return 0;
-        int lef=helper(root.left,ll);
-        int rig=helper(root.right,ll);
-          
-          ll.add(lef+rig);
-        return Math.max(lef,rig)+1;
+    public static int height(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = height(root.left);
+        int right = height(root.right);
+        return Math.max(left, right) + 1;
     }
+    public static int diameter(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int ld = diameter(root.left);
+        int rd = diameter(root.right);
+        int left = height(root.left);
+        int right = height(root.right);
+        int self = (left + right);
+        return Math.max(ld, Math.max(rd, self));
 
+    }
     public int diameterOfBinaryTree(TreeNode root) {
-        if(root==null) return 0;
-        List<Integer> ll=new ArrayList<>();
-        
-       helper(root,ll);
-       Collections.sort(ll);
-       int ans=ll.get(ll.size()-1);
-       return ans;
-
+        return  diameter( root);
     }
 }
