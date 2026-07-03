@@ -19,16 +19,12 @@ class Solution {
             return false;
         }
         if (root.val == subtree.val) {
-            System.out.println("gaya hai");
            boolean res = found(root, subtree);
            if(res == true){
             return true;
            }
         }
-        boolean left = check(root.left, subtree);
-        boolean right = check(root.right, subtree);
-
-        return left || right;
+        return check(root.left, subtree) || check(root.right, subtree);
     }
 
     public static boolean found(TreeNode root, TreeNode subtree) {
@@ -40,11 +36,7 @@ class Solution {
         if(root.val != subtree.val){
             return false;
         }
-        // System.out.println(root.val + " " + subtree.val);
-        boolean left = found(root.left, subtree.left);
-        boolean right = found(root.right, subtree.right);
-
-        return left && right;
+        return found(root.left, subtree.left) && found(root.right, subtree.right);
     }
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
        return check(root, subRoot);
