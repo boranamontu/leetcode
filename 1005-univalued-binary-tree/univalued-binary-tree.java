@@ -14,16 +14,23 @@
  * }
  */
 class Solution {
-    public static boolean check(TreeNode root,int val){
+    public static void inorder(TreeNode root,List<Integer> ll){
         if(root == null){
-            return true;
+            return;
         }
-        if(root.val != val){
-            return false;
-        }
-        return check(root.left,val) && check(root.right,val);
+        inorder(root.left,ll);
+        ll.add(root.val);
+        inorder(root.right,ll);
     }
     public boolean isUnivalTree(TreeNode root) {
-        return check(root,root.val);
+        List<Integer> ll = new ArrayList<>();
+        inorder(root,ll);
+        int val = ll.get(0);
+        for(int i = 0 ; i< ll.size();i++){
+            if(ll.get(i) != val){
+                return false;
+            }
+        }
+        return true;
     }
 }
