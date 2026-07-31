@@ -4,12 +4,10 @@ class Solution {
         for(int i = 0 ; i < nums.length ; i++){
             hs.add(nums[i]);
         }
-        while(true){
-            if(!hs.contains(original)){
-                break;
-            }else{
+        while(hs.contains(original)){
+            
                 original = 2 * original;
-            }
+            
         }
         return original;
     }
