@@ -13,8 +13,6 @@ class Solution {
         Arrays.sort(arr);
         if(arr.length % 2 == 0){
             int median = (arr[arr.length/2]+arr[(arr.length/2)-1]);
-            System.out.println(arr[(arr.length/2)-1]);
-            System.out.println(arr[(arr.length/2)]);
             return (double)median/2;
         }
         double median = (arr[arr.length/2]);
